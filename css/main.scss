@@ -94,7 +94,6 @@ a {
 
 .button {
   font-family: "Lato", sans-serif;
-
   position: relative;
   left: 50%;
   transform: translate(-50%);
@@ -137,6 +136,11 @@ a {
     }
   }
 }
+
+.close-nav {
+  display: none;
+}
+
 .bread-cumb {
   height: 40px;
   background: #fff;
@@ -247,6 +251,16 @@ a {
   }
 }
 
+.show-all {
+  position: relative;
+  font-size: 18px;
+  text-decoration: underline;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: right;
+  bottom: -10px;
+}
+
 //                                        HOME PAGE
 //                                        HOME PAGE
 
@@ -259,6 +273,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  .nav-icon,
+  .search-icon {
+    display: none;
+  }
   .logo-header {
     width: 170px;
     height: 97px;
@@ -305,6 +323,7 @@ header {
   .trendy-box {
     position: relative;
     display: flex;
+    justify-content: space-between;
     margin-top: 29px;
     .main-trendy {
       position: relative;
@@ -376,15 +395,6 @@ header {
         }
       }
     }
-    .show-all {
-      position: absolute;
-      font-size: 18px;
-      text-decoration: underline;
-      font-weight: 300;
-      text-transform: uppercase;
-      right: 31px;
-      bottom: -10px;
-    }
   }
 }
 
@@ -426,6 +436,9 @@ header {
             margin-top: 15px;
           }
         }
+      }
+      .show-all {
+        display: none;
       }
     }
     .travel-box {
@@ -496,6 +509,7 @@ header {
           font-weight: 300;
           margin-top: 30px;
           height: 48px;
+          overflow: hidden;
         }
         .img-1 {
           margin-top: 30px;
@@ -653,7 +667,7 @@ header {
       }
     }
     .heart-box:hover {
-      background: #e94745;
+      background: #ed4956;
       box-shadow: 0px 0px 1px 3px rgba(0, 0, 0, 0.15);
 
       img {
@@ -697,6 +711,9 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    ul {
+      display: none;
+    }
     .input-box {
       width: 300px;
       font-family: "Lato", sans-serif;
@@ -855,14 +872,36 @@ footer {
   display: flex;
   height: 550px;
   .image-box-1 {
+    position: relative;
     width: 30%;
     padding-right: 18px;
     img {
       width: 100%;
       height: 100%;
     }
+    .title {
+      position: absolute;
+      width: 80%;
+      left: 50%;
+      transform: translateX(-50%);
+      line-height: 36px;
+      color: #fff;
+      text-transform: uppercase;
+      height: 36px;
+    }
+    &:nth-child(1) {
+      .title {
+        top: 55px;
+      }
+    }
+    &:nth-child(2) {
+      .title {
+        bottom: 55px;
+      }
+    }
   }
   .image-box-2 {
+    position: relative;
     width: 40%;
     .image-box-2-1,
     .image-box-2-2 {
@@ -874,9 +913,33 @@ footer {
     }
     .image-box-2-1 {
       padding-bottom: 9px;
+      ul {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        li {
+          list-style: none;
+          margin-bottom: 13px;
+          .title {
+            color: #fff;
+          }
+        }
+      }
     }
     .image-box-2-2 {
       padding-top: 9px;
+      .title {
+        position: absolute;
+        bottom: 55px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        height: 36px;
+        line-height: 36px;
+        width: 300px;
+        text-align: center;
+        letter-spacing: 2px;
+      }
     }
   }
 }
@@ -979,7 +1042,7 @@ footer {
   }
 }
 
-//                                                  TRAVEL PAGE
+//                                       TRAVEL PAGE
 .travel-page {
   position: relative;
   padding: 60px 174px 0px 175px;
@@ -1091,7 +1154,7 @@ footer {
   }
 }
 
-//                                                  SPORT WEAR PAGE
+//                                     SPORT WEAR PAGE
 .sport-wear-page {
   padding: 100px 174px 100px 175px;
   display: flex;
@@ -1150,20 +1213,31 @@ footer {
   }
 }
 
-//                                                  VIDEOS PAGE
+//                                     VIDEOS PAGE
 .videos-page {
   padding: 50px 174px 100px 175px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   .video {
+    position: relative;
     width: 49%;
     .image-box {
+      position: relative;
       height: 500px;
       img {
-        width: 100%;
-        height: 100%;
-        border-radius: 16px;
+        position: absolute;
+        &:nth-child(1) {
+          width: 100%;
+          height: 100%;
+          border-radius: 16px;
+        }
+        &:nth-child(2) {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          cursor: pointer;
+        }
       }
     }
     .content {
@@ -1204,9 +1278,9 @@ footer {
             }
           }
         }
-        .icon-container {
-          display: none;
-        }
+      }
+      .icon-container {
+        display: none;
       }
     }
     &:nth-child(1) {
@@ -1222,12 +1296,12 @@ footer {
   }
 }
 
-//                                               FAMILY PAGE
+//                                      FAMILY PAGE
 .family-box.family-page {
   padding: 100px 174px 50px 175px;
 }
 
-//                                              DETAILS PAGE
+//                                      DETAILS PAGE
 .details-page {
   padding: 50px 174px 0px 175px;
   display: flex;
@@ -1295,14 +1369,15 @@ footer {
       overflow: hidden;
       margin-bottom: 100px;
       margin-top: 30px;
+      background: #fff;
     }
   }
 }
 
 // RESPONSIVE
 
-// RESPONSIVE PAGE 1680PX AND BIGGER
-@media (min-width: 1650px) {
+// RESPONSIVE PAGE 1920PX AND BIGGER
+@media (max-width: 1920px) {
   header,
   .trendy-home,
   .beauty-travel-home,
@@ -1314,21 +1389,50 @@ footer {
   .travel-page,
   .sport-wear-page,
   .videos-page,
-  .family-box.family-page {
+  .family-box.family-page,
+  .details-page {
+    padding-right: 374.5px;
+    padding-left: 375.5px;
+  }
+  footer {
+    .part-1 {
+      padding-right: 374.5px;
+      padding-left: 375.5px;
+    }
+    .part-2 {
+      padding: 0px 100px;
+    }
+  }
+}
+
+// RESPONSIVE PAGE 1680PX AND BIGGER
+@media (max-width: 1680px) {
+  header,
+  .trendy-home,
+  .beauty-travel-home,
+  .video-home,
+  .family-box,
+  .bread-cumb,
+  .trendy-page,
+  .beauty-page,
+  .travel-page,
+  .sport-wear-page,
+  .videos-page,
+  .family-box.family-page,
+  .details-page {
     padding-right: 254.5px;
     padding-left: 255.5px;
   }
   footer {
-    .part-1,
-    .part-2 {
+    .part-1 {
       padding-right: 254.5px;
       padding-left: 255.5px;
     }
   }
 }
 
-// RESPONSIVE PAGE 1920PX AND BIGGER
-@media (min-width: 1900px) {
+// RESPONSIVE PAGE 1680PX AND BIGGER
+@media (max-width: 1550px) {
   header,
   .trendy-home,
   .beauty-travel-home,
@@ -1340,15 +1444,1323 @@ footer {
   .travel-page,
   .sport-wear-page,
   .videos-page,
-  .family-box.family-page {
-    padding-right: 374.5px;
-    padding-left: 375.5px;
+  .family-box.family-page,
+  .details-page {
+    padding-right: 174px;
+    padding-left: 175px;
+  }
+  footer {
+    .part-1 {
+      padding-right: 174px;
+      padding-left: 175px;
+    }
+    .part-2 {
+      padding: 0px 50px;
+    }
+  }
+}
+
+// RESPONSIVE PAGE 1440PX AND LESS
+@media (max-width: 1440px) {
+  header,
+  .bread-cumb,
+  .trendy-home,
+  .beauty-travel-home,
+  .video-home,
+  .family-box,
+  .trendy-page,
+  .beauty-page,
+  .travel-page,
+  .sport-wear-page,
+  .videos-page,
+  .family-box.family-page,
+  .details-page {
+    padding-right: 134.5px;
+    padding-left: 135.5px;
+  }
+  footer {
+    .part-1,
+    .part2 {
+      padding-right: 134.5px;
+      padding-left: 135.5px;
+    }
+  }
+}
+
+// RESPONSIVE PAGE 1024PX AND LESS
+@media (max-width: 1024px) {
+  header,
+  .bread-cumb,
+  .trendy-home,
+  .beauty-travel-home,
+  .video-home,
+  .family-box,
+  .trendy-page,
+  .beauty-page,
+  .travel-page,
+  .sport-wear-page,
+  .videos-page,
+  .family-box.family-page,
+  .details-page {
+    padding-right: 40px;
+    padding-left: 40px;
   }
   footer {
     .part-1,
     .part-2 {
-      padding-right: 374.5px;
-      padding-left: 375.5px;
+      padding-right: 40px;
+      padding-left: 40px;
     }
+    .part-1 {
+      .recent-popular-posts.recent {
+        display: none;
+      }
+    }
+    .part-2 {
+      justify-content: flex-end;
+      ul {
+        display: none;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
+  header {
+    .search-header {
+      width: 350px;
+      height: 30px;
+      .search-icon-header {
+        top: 4px;
+        right: 10px;
+        transform: scale(0.8);
+      }
+    }
+  }
+
+  //                            BEAUTY PAGE
+
+  // BANNER BEAUTY
+  .banner-beauty {
+    .image-box-1 {
+      padding-right: 9px;
+      &:nth-child(1) {
+        .title {
+          top: 30px;
+        }
+      }
+      &:nth-child(2) {
+        .title {
+          bottom: 30px;
+        }
+      }
+    }
+    .image-box-2 {
+      .image-box-2-1 {
+        padding-bottom: 4.5px;
+      }
+      .image-box-2-2 {
+        padding-top: 4.5px;
+        .title {
+          bottom: 30px;
+        }
+      }
+    }
+  }
+
+  // BEAUTY
+  .beauty-page {
+    .right-side {
+      .popular-box {
+        .popular-list {
+          .popular {
+            .content {
+              padding-left: 20px;
+              .description {
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //                                  DETAILS PAGE
+  .details-page {
+    .right-side {
+      .related-news {
+        .news-list {
+          .new {
+            .content {
+              padding-left: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// RESPONSIVE PAGE 768PX AND LESS
+@media (max-width: 768px) {
+  header,
+  .bread-cumb,
+  .trendy-home,
+  .beauty-travel-home,
+  .video-home,
+  .family-box,
+  .trendy-page,
+  .beauty-page,
+  .travel-page,
+  .sport-wear-page,
+  .videos-page,
+  .family-box.family-page,
+  .details-page {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .button {
+    width: 150px;
+    height: 35px;
+    font-size: 12px;
+  }
+
+  .latest-find {
+    .products-list {
+      .product {
+        .image-box {
+          padding: 0px 20px;
+          width: 100%;
+        }
+        .content {
+          .title {
+            line-height: 18px;
+            height: 38px;
+          }
+        }
+      }
+    }
+  }
+
+  header {
+    .logo-header {
+      width: 150px;
+      height: 70px;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .search-header {
+      width: 220px;
+      height: 25px;
+      .search-icon-header {
+        top: 1px;
+        right: 10px;
+        transform: scale(0.6);
+      }
+    }
+  }
+
+  footer {
+    .part-1 {
+      img {
+        height: 150px;
+      }
+      .input-box {
+        width: 220px;
+        input,
+        button {
+          height: 30px;
+          margin-top: 10px;
+        }
+      }
+      .recent-popular-posts {
+        height: 250px;
+        li {
+          .date {
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+    .part-2 {
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .trendy-home {
+    .trendy-box {
+      .main-trendy {
+        width: 46%;
+      }
+      .trendy-list {
+        margin-left: 0;
+        width: 52%;
+      }
+    }
+  }
+
+  .beauty-travel-home {
+    .beauty-travel-box {
+      width: 70%;
+      .travel-box {
+        .travel {
+          .image-box {
+            height: 250px;
+          }
+        }
+      }
+    }
+    .right-side {
+      width: 26%;
+      .about-me {
+        .part-1 {
+          padding: 0px 20px;
+          height: 450px;
+          .text-1,
+          .text-2,
+          .img-2 {
+            width: 100%;
+            margin-top: 20px;
+            text-align: center;
+          }
+        }
+        .part-2 {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .video-home {
+    .video-box {
+      height: 250px;
+    }
+  }
+
+  .family-box {
+    .family {
+      .image-box {
+        height: 250px;
+      }
+      .heart-box {
+        top: 225px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        img,
+        p {
+          transform: scale(0.8);
+        }
+      }
+    }
+  }
+
+  //                             TRENDY PAGE
+  .trendy-page {
+    .trendy {
+      .image-box {
+        width: 50%;
+      }
+      .content {
+        width: 47%;
+        .title {
+          letter-spacing: 0.5px;
+        }
+        .icon-container {
+          li {
+            img {
+              width: 17px;
+              height: 17px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //                              BEAUTY PAGE
+  .banner-beauty {
+    height: 450px;
+    .image-box-1 {
+      width: 45%;
+      &:nth-child(1) {
+        display: none;
+      }
+      &:nth-child(2) {
+        .title {
+          bottom: 10px;
+        }
+      }
+    }
+    .image-box-2 {
+      width: 55%;
+      .image-box-2-1 {
+        ul {
+          li {
+            margin-bottom: 7px;
+          }
+        }
+      }
+      .image-box-2-2 {
+        .title {
+          bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .beauty-page {
+    padding-top: 50px;
+    .beauty-list {
+      width: 70%;
+      .beauty {
+        .content {
+          .icon-container {
+            li {
+              img {
+                width: 17px;
+                height: 17px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .right-side {
+      width: 26%;
+      > .image-box {
+        height: 430px;
+      }
+      .popular-box {
+        margin-top: 60px;
+        > .title {
+          font-size: 20px;
+        }
+        .popular-list {
+          margin-top: 30px;
+          .popular {
+            .image-box {
+              width: 75px;
+              height: 75px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //                                  TRAVEL PAGE
+  .travel-page {
+    .travel-box {
+      .travel-main {
+        .image-box {
+          height: 400px;
+        }
+        .content {
+          bottom: -100px;
+          height: 200px;
+          padding: 20px 30px 0px;
+        }
+      }
+      .left-side,
+      .right-side {
+        .travel {
+          .image-box {
+            height: 400px;
+          }
+          .content {
+            width: 90%;
+            height: 200px;
+            padding-top: 15px;
+            .title {
+              line-height: 25px;
+              height: 25px;
+            }
+            .description {
+              margin-top: 10px;
+            }
+            .icon-container {
+              li {
+                img {
+                  width: 17px;
+                  height: 17px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .left-side {
+        .travel {
+          &:nth-child(2) {
+            .image-box {
+              height: 600px;
+            }
+          }
+        }
+      }
+      .right-side {
+        .travel {
+          &:nth-child(1) {
+            .image-box {
+              height: 600px;
+            }
+          }
+        }
+      }
+    }
+
+    .button {
+      margin-top: 200px;
+    }
+  }
+
+  //                            SPORT WEAR PAGE
+  .sport-wear-page {
+    padding-top: 50px;
+    .sport-wear {
+      .image-box {
+        height: 500px;
+      }
+      &:nth-child(1) {
+        .image-box {
+          height: 400px;
+        }
+      }
+    }
+
+    .panigation {
+      margin-top: 50px;
+    }
+  }
+
+  //                             VIDEO PAGE
+  .videos-page {
+    .video {
+      margin-bottom: 130px;
+      .image-box {
+        height: 400px;
+      }
+      .content {
+        position: absolute;
+        width: 90%;
+        height: 200px;
+        padding-top: 15px;
+        bottom: -100px;
+        .title {
+          line-height: 25px;
+          height: 25px;
+        }
+        .description {
+          margin-top: 10px;
+          height: 72px;
+        }
+        .icon-container {
+          li {
+            img {
+              width: 17px;
+              height: 17px;
+            }
+          }
+        }
+      }
+    }
+
+    .button {
+      margin-top: 50px;
+    }
+  }
+
+  //                           DETAILS PAGE
+  .details-page {
+    .details-box {
+      width: 70%;
+    }
+    .right-side {
+      width: 26%;
+      .related-news {
+        padding: 30px 10px;
+        .news-list {
+          .new {
+            margin-top: 20px;
+            .image-box {
+              width: 50px;
+              height: 50px;
+              p {
+                height: 20px;
+                width: 20px;
+                line-height: 20px;
+                font-size: 14px;
+              }
+            }
+            .content {
+              width: 70%;
+              padding-left: 10px;
+              .title {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// RESPONSIVE PAGE 540PX AND LESS
+@media (max-width: 540px) {
+  header,
+  .trendy-home,
+  .beauty-travel-home,
+  .video-home,
+  .family-box,
+  .bread-cumb,
+  .trendy-page,
+  .beauty-page,
+  .travel-page,
+  .sport-wear-page,
+  .videos-page,
+  .family-box.family-page,
+  .details-page {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  footer {
+    .part-1,
+    .part-2 {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+  }
+
+  .main-title.res {
+    display: block;
+    margin-top: 25px;
+  }
+
+  header {
+    height: 60px;
+    .nav-icon,
+    .search-icon {
+      cursor: pointer;
+      display: initial;
+      transform: scale(1.1);
+    }
+    .logo-header {
+      width: 70px;
+      height: 40px;
+    }
+    .search-header {
+      display: none;
+    }
+    .date-header {
+      display: none;
+    }
+  }
+  .close-nav {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    display: initial;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+  }
+  .close-nav::after,
+  .close-nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #000;
+    transform: rotateZ(45deg);
+  }
+  .close-nav::before {
+    transform: rotateZ(-45deg);
+  }
+
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    min-height: 100vh;
+    background: #fff9f7;
+    align-items: flex-start;
+    transition: 0.5s;
+    z-index: 1;
+    ul {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+      li {
+        margin-top: 20px;
+        a {
+          font-size: 18px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+  .navigation.active {
+    left: 0;
+  }
+
+  .icon-container {
+    li {
+      img {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+
+  .banner-home {
+    height: 250px;
+  }
+
+  // TRENDY HOME
+  .trendy-home {
+    padding-top: 50px;
+    .trendy-box {
+      flex-direction: column;
+      .main-trendy {
+        width: 100%;
+        .image-box {
+          height: 420px;
+        }
+        .content {
+          .date {
+            font-size: 14px;
+          }
+          .title {
+            font-size: 20px;
+            line-height: 30px;
+            height: 90px;
+          }
+          .icon-container {
+            margin-top: 20px;
+          }
+        }
+      }
+      .trendy-list {
+        width: 100%;
+        .trendy {
+          flex-direction: column;
+          margin-top: 30px;
+          .image-box {
+            width: 100%;
+            height: 300px;
+          }
+          .content {
+            width: 100%;
+            .date {
+              margin-top: 5px;
+            }
+            .title {
+              height: 48px;
+            }
+            .description {
+              display: none;
+            }
+          }
+        }
+      }
+      .show-all {
+        text-align: left;
+      }
+    }
+  }
+
+  .banner-beauty {
+    .title {
+      display: none;
+    }
+  }
+
+  // BEAUTY TRAVEL HOME
+  .beauty-travel-home {
+    padding-top: 100px;
+    .beauty-travel-box {
+      width: 100%;
+      .beauty-box {
+        position: relative;
+        .beauty {
+          margin-top: 25px;
+          .content {
+            .date {
+              margin-top: 5px;
+            }
+            .title {
+              height: 30px;
+              font-size: 20px;
+              line-height: 30px;
+            }
+            .description {
+              display: none;
+            }
+          }
+        }
+        .show-all {
+          display: block;
+          margin-top: 30px;
+          text-align: left;
+        }
+      }
+
+      .travel-box {
+        .travel {
+          width: 100%;
+          margin-bottom: 25px;
+          border-radius: 0px;
+
+          .image-box {
+            height: 300px;
+            img {
+              border-radius: 0px;
+            }
+          }
+          .content {
+            padding: 0px 15px;
+            .title {
+              margin-top: 20px;
+              font-size: 16px;
+              line-height: 25px;
+              height: 25px;
+            }
+            .description {
+              margin-top: 10px;
+            }
+            .icon-container {
+              margin-top: 15px;
+            }
+          }
+        }
+        .button {
+          margin-top: 50px;
+        }
+      }
+    }
+
+    .right-side {
+      display: none;
+    }
+  }
+
+  // VIDEO
+  .video-home {
+    flex-direction: column-reverse;
+    padding-top: 12.5px;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    height: 390px;
+    .content {
+      width: 100%;
+      height: 100px;
+      margin-top: 20px;
+      .title {
+        margin-top: 20px;
+        height: 56px;
+        font-size: 18px;
+        line-height: 28px;
+        text-transform: uppercase;
+      }
+      > p {
+        margin-top: 15px;
+      }
+      .followers {
+        margin-top: 15px;
+      }
+    }
+    .video-box {
+      width: 100%;
+      height: 185px;
+      .icon {
+        width: 70px;
+        height: 70px;
+      }
+    }
+  }
+
+  // FAMILY HOME
+  .family-box {
+    padding-bottom: 50px;
+    .family {
+      width: 100%;
+      .image-box {
+        height: 300px;
+      }
+      .content {
+        padding: 20px;
+        .title {
+          text-transform: uppercase;
+          font-size: 16px;
+        }
+      }
+      .heart-box {
+        width: 60px;
+        height: 60px;
+        top: 270px;
+      }
+    }
+  }
+
+  footer {
+    height: 430px;
+    .part-1 {
+      flex-direction: column;
+      padding-top: 30px;
+      justify-content: flex-start;
+      align-items: center;
+      height: 350px;
+      img {
+        width: 50px;
+        height: 61px;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        li {
+          list-style: none;
+          a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+      }
+      .input-box {
+        display: none;
+      }
+      .recent-popular-posts {
+        display: none;
+      }
+    }
+    .part-2 {
+      p {
+        text-align: center;
+      }
+    }
+  }
+
+  //                                                 TRENDY PAGE
+  .banner-trendy {
+    display: none;
+  }
+
+  .trendy-page {
+    padding-top: 25px;
+    .trendy {
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-bottom: 30px;
+      &:nth-child(1) {
+        .image-box {
+          height: 420px;
+        }
+      }
+      .image-box {
+        width: 100%;
+        height: 182px;
+      }
+      .content {
+        width: 100%;
+        .date-res {
+          margin-top: 20px;
+        }
+        .title {
+          margin-top: 3px;
+          height: 75px;
+          font-size: 16px;
+          line-height: 25px;
+        }
+        .description {
+          height: 88px;
+          margin-top: 7px;
+        }
+        .icon-container {
+          margin-top: 28px;
+          left: 100%;
+          transform: translateX(-100%);
+        }
+      }
+      &:nth-child(even) {
+        flex-direction: column;
+      }
+    }
+    .panigation {
+      margin: 50px 0px;
+    }
+  }
+
+  //                                              BEAUTY PAGE
+
+  // BANNER BEAUTY
+  .banner-beauty {
+    margin-top: 25px;
+    flex-wrap: wrap;
+    height: 100%;
+    .image-box-1 {
+      width: 50%;
+      &:nth-child(1) {
+        display: block;
+        padding-right: 3.5px;
+      }
+      &:nth-child(2) {
+        padding-left: 3.5px;
+        padding-right: 0px;
+      }
+    }
+    .image-box-2 {
+      width: 100%;
+      .image-box-2-1 {
+        padding-top: 7px;
+        height: 160px;
+      }
+      .image-box-2-2 {
+        display: none;
+      }
+    }
+  }
+
+  // BEAUTY LIST
+  .beauty-page {
+    padding-top: 30px;
+    .beauty-list {
+      width: 100%;
+      .beauty {
+        width: 100%;
+        justify-content: flex-start;
+        .content {
+          margin-top: 15px;
+          .description {
+            margin-top: 12px;
+          }
+        }
+      }
+      .panigation {
+        margin: 20px 0px 50px;
+      }
+    }
+    .right-side {
+      display: none;
+    }
+  }
+
+  //                               TRAVEL PAGE
+  .travel-page {
+    padding: 25px 0px 50px;
+    .travel-box {
+      .travel-main {
+        .image-box {
+          height: 250px;
+          img {
+            border-radius: 0px;
+          }
+        }
+
+        .content {
+          position: inherit;
+          top: 0;
+          width: 100%;
+          border-radius: 0px;
+          height: 210px;
+          .title {
+            font-size: 16px;
+            height: 50px;
+            line-height: 25px;
+          }
+          .description {
+            margin-top: 10px;
+            height: 72px;
+          }
+          .icon-container {
+            width: 131px;
+            margin-top: 20px;
+          }
+        }
+      }
+      .left-side,
+      .right-side {
+        width: 100%;
+        .travel {
+          margin-top: 30px;
+          .image-box {
+            height: 330px;
+            img {
+              border-radius: 0px;
+            }
+          }
+          .content {
+            position: relative;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            .title {
+              font-size: 16px;
+              line-height: 25px;
+              height: 50px;
+            }
+            .icon-container {
+              width: 131px;
+              margin-top: 20px;
+            }
+          }
+        }
+      }
+      .left-side {
+        .travel {
+          &:nth-child(2) {
+            .image-box {
+              height: 450px;
+            }
+          }
+        }
+      }
+      .right-side {
+        .travel {
+          &:nth-child(1) {
+            .image-box {
+              height: 450px;
+            }
+          }
+        }
+      }
+    }
+    .button {
+      margin: 50px 0px;
+    }
+  }
+
+  //                             SPORT WEAR PAGE
+  .sport-wear-page {
+    padding: 25px 0px 0px;
+    .sport-wear {
+      width: 100%;
+      margin-bottom: 30px;
+      &:nth-child(1) {
+        .image-box {
+          height: 200px;
+        }
+        .content {
+          margin-top: 20px;
+          .title {
+            height: 50px;
+          }
+        }
+      }
+      .image-box {
+        height: 400px;
+      }
+      .content {
+        padding: 13px;
+        .date {
+          text-align: center;
+        }
+        .title {
+          text-transform: uppercase;
+          font-size: 20px;
+          line-height: 25px;
+          height: 50px;
+        }
+        .description {
+          display: none;
+        }
+        .icon-container {
+          display: flex;
+          width: 131px;
+          left: 50%;
+          transform: translateX(-50%);
+          margin-top: 20px;
+        }
+      }
+    }
+    .panigation {
+      margin: 20px 0px 50px;
+    }
+  }
+
+  //                                    VIDEO PAGE
+  .videos-page {
+    padding: 0;
+    .video {
+      width: 100%;
+      margin-top: 0px;
+      .image-box {
+        height: 330px;
+        img {
+          &:nth-child(1) {
+            border-radius: 0px;
+          }
+          &:nth-child(2) {
+            width: 85px;
+            height: 85px;
+          }
+        }
+      }
+      .content {
+        padding: inherit;
+        border-radius: 0px;
+        width: 100%;
+        .title {
+          font-size: 16px;
+          line-height: 25px;
+          height: 50px;
+        }
+        .share-icon-box {
+          display: none;
+        }
+        .icon-container {
+          width: 131px;
+          display: flex;
+          margin-top: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      &:nth-child(1) {
+        margin-top: 25px;
+      }
+    }
+    .button {
+      margin: 30px 0px 50px;
+    }
+  }
+
+  //                                    FAMILY PAGE
+  .family-box.family-page {
+    padding-top: 25px;
+  }
+  .family-box.family-page.res {
+    display: none;
+  }
+
+  //                           .about-me WEAR DETAILS
+  .details-page {
+    padding: 25px 0px 50px;
+    .details-box {
+      width: 100%;
+      background: #000;
+    }
+    .right-side {
+      display: none;
+    }
+  }
+}
+
+// RESPONSIVE PAGE 375PX AND LESS
+@media (max-width: 375px) {
+  header,
+  .trendy-home,
+  .beauty-travel-home,
+  .video-home,
+  .family-box,
+  .bread-cumb,
+  .trendy-page,
+  .beauty-page,
+  .travel-page,
+  .sport-wear-page,
+  .videos-page,
+  .family-box.family-page,
+  .details-page {
+    padding-right: 12.5px;
+    padding-left: 12.5px;
+  }
+  footer {
+    .part-1,
+    .part-2 {
+      padding-right: 12.5px;
+      padding-left: 12.5px;
+    }
+  }
+
+  .icon-container {
+    width: 105px;
+  }
+
+  .show-all {
+    font-size: 14px;
+  }
+
+  .banner-home {
+    height: 180px;
+  }
+
+  // TRENDY HOME
+  .trendy-home {
+    .trendy-box {
+      .trendy-list {
+        .trendy {
+          .image-box {
+            height: 300px;
+          }
+          .content {
+            .date {
+              margin-top: 5px;
+            }
+            .title {
+              height: 48px;
+            }
+            .description {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // BEAUTY TRAVEL HOME
+  .beauty-travel-home {
+    padding-top: 30px;
+    .beauty-travel-box {
+      .beauty-box {
+        .beauty {
+          .image-box {
+            height: 227px;
+          }
+        }
+        .show-all {
+          margin-top: 10px;
+        }
+      }
+      .travel-box {
+        margin-top: 25px;
+        .content {
+          .description {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  .sport-wear-page,
+  .travel-page {
+    padding: 25px 0px 0px;
+  }
+
+  //                                    VIDEO PAGE
+  .videos-page {
+    padding: 0;
+  }
+
+  //                           .about-me WEAR DETAILS
+  .details-page {
+    padding: 25px 0px 50px;
   }
 }
