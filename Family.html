@@ -9,9 +9,15 @@
   </head>
   <body>
     <header>
+      <div class="nav-icon" onclick="toggleNav()">
+        <img src="/images/res/nav.svg" alt="" />
+      </div>
       <a href="/HomePage.html" class="logo-header">
         <img src="/images/home/logo-header.png" alt="logo website" />
       </a>
+      <div class="search-icon">
+        <img src="/images/res/search.svg" alt="" />
+      </div>
       <div class="search-header">
         <input type="text" placeholder="Search Lotus.com" />
         <img
@@ -27,13 +33,14 @@
     </header>
 
     <section class="navigation">
+      <div class="close-nav"></div>
       <ul>
-        <li><a href="/Trendy.html">Trendy</a></li>
-        <li><a href="/Beauty.html">Beauty</a></li>
-        <li><a href="/Travel.html">Travel</a></li>
-        <li><a href="/Sportwear.html">Sportwear</a></li>
-        <li><a href="/Videos.html">videos</a></li>
-        <li><a href="/Family.html">family</a></li>
+        <li><a class="nav-item" href="/Trendy.html">Trendy</a></li>
+        <li><a class="nav-item" href="/Beauty.html">Beauty</a></li>
+        <li><a class="nav-item" href="/Travel.html">Travel</a></li>
+        <li><a class="nav-item" href="/Sportwear.html">Sportwear</a></li>
+        <li><a class="nav-item" href="/Videos.html">videos</a></li>
+        <li><a class="nav-item" href="/Family.html">family</a></li>
       </ul>
     </section>
 
@@ -266,12 +273,19 @@
     <footer>
       <div class="part-1">
         <img src="/images/home/footer icon.svg" alt="" />
+        <ul>
+          <li><a href="#">about</a></li>
+          <li><a href="#">shop</a></li>
+          <li><a href="#">contact</a></li>
+          <li><a href="#">subscribe</a></li>
+          <li><a href="#">presets</a></li>
+        </ul>
         <div class="input-box">
           <p class="title">SUBSCRIBE TO MY NEWSLETTER</p>
           <input type="text" placeholder="Your email address" />
           <button>subscribe</button>
         </div>
-        <ul class="recent-popular-posts">
+        <ul class="recent-popular-posts recent">
           <div class="title">Recent posts</div>
           <li>
             <p class="name">BEAUTY OF NATURE</p>
@@ -316,5 +330,7 @@
         </p>
       </div>
     </footer>
+
+    <script src="/index.js"></script>
   </body>
 </html>

@@ -135,6 +135,10 @@ a {
   color: #000;
 }
 
+.close-nav {
+  display: none;
+}
+
 .bread-cumb {
   height: 40px;
   background: #fff;
@@ -242,6 +246,16 @@ a {
   text-align: center;
 }
 
+.show-all {
+  position: relative;
+  font-size: 18px;
+  text-decoration: underline;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: right;
+  bottom: -10px;
+}
+
 header {
   position: relative;
   width: 100%;
@@ -250,6 +264,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+header .nav-icon,
+header .search-icon {
+  display: none;
 }
 header .logo-header {
   width: 170px;
@@ -295,6 +313,7 @@ header .search-header .search-icon-header {
 .trendy-home .trendy-box {
   position: relative;
   display: flex;
+  justify-content: space-between;
   margin-top: 29px;
 }
 .trendy-home .trendy-box .main-trendy {
@@ -363,15 +382,6 @@ header .search-header .search-icon-header {
   width: 15px;
   height: 15px;
 }
-.trendy-home .trendy-box .show-all {
-  position: absolute;
-  font-size: 18px;
-  text-decoration: underline;
-  font-weight: 300;
-  text-transform: uppercase;
-  right: 31px;
-  bottom: -10px;
-}
 
 .beauty-travel-home {
   position: relative;
@@ -411,6 +421,9 @@ header .search-header .search-icon-header {
 }
 .beauty-travel-home .beauty-travel-box .beauty-box .beauty .content .icon-container {
   margin-top: 15px;
+}
+.beauty-travel-home .beauty-travel-box .beauty-box .show-all {
+  display: none;
 }
 .beauty-travel-home .beauty-travel-box .travel-box {
   position: relative;
@@ -477,6 +490,7 @@ header .search-header .search-icon-header {
   font-weight: 300;
   margin-top: 30px;
   height: 48px;
+  overflow: hidden;
 }
 .beauty-travel-home .right-side .about-me .part-1 .img-1 {
   margin-top: 30px;
@@ -628,7 +642,7 @@ header .search-header .search-icon-header {
   transition: 0.5s;
 }
 .family-box .family .heart-box:hover {
-  background: #e94745;
+  background: #ed4956;
   box-shadow: 0px 0px 1px 3px rgba(0, 0, 0, 0.15);
 }
 .family-box .family .heart-box:hover img {
@@ -667,6 +681,9 @@ footer .part-1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+footer .part-1 ul {
+  display: none;
 }
 footer .part-1 .input-box {
   width: 300px;
@@ -818,6 +835,7 @@ footer .part-2 p a {
   height: 550px;
 }
 .banner-beauty .image-box-1 {
+  position: relative;
   width: 30%;
   padding-right: 18px;
 }
@@ -825,7 +843,24 @@ footer .part-2 p a {
   width: 100%;
   height: 100%;
 }
+.banner-beauty .image-box-1 .title {
+  position: absolute;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 36px;
+  color: #fff;
+  text-transform: uppercase;
+  height: 36px;
+}
+.banner-beauty .image-box-1:nth-child(1) .title {
+  top: 55px;
+}
+.banner-beauty .image-box-1:nth-child(2) .title {
+  bottom: 55px;
+}
 .banner-beauty .image-box-2 {
+  position: relative;
   width: 40%;
 }
 .banner-beauty .image-box-2 .image-box-2-1,
@@ -840,8 +875,32 @@ footer .part-2 p a {
 .banner-beauty .image-box-2 .image-box-2-1 {
   padding-bottom: 9px;
 }
+.banner-beauty .image-box-2 .image-box-2-1 ul {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+.banner-beauty .image-box-2 .image-box-2-1 ul li {
+  list-style: none;
+  margin-bottom: 13px;
+}
+.banner-beauty .image-box-2 .image-box-2-1 ul li .title {
+  color: #fff;
+}
 .banner-beauty .image-box-2 .image-box-2-2 {
   padding-top: 9px;
+}
+.banner-beauty .image-box-2 .image-box-2-2 .title {
+  position: absolute;
+  bottom: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  height: 36px;
+  line-height: 36px;
+  width: 300px;
+  text-align: center;
+  letter-spacing: 2px;
 }
 
 .beauty-page {
@@ -1107,15 +1166,26 @@ footer .part-2 p a {
   flex-wrap: wrap;
 }
 .videos-page .video {
+  position: relative;
   width: 49%;
 }
 .videos-page .video .image-box {
+  position: relative;
   height: 500px;
 }
 .videos-page .video .image-box img {
+  position: absolute;
+}
+.videos-page .video .image-box img:nth-child(1) {
   width: 100%;
   height: 100%;
   border-radius: 16px;
+}
+.videos-page .video .image-box img:nth-child(2) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 .videos-page .video .content {
   position: relative;
@@ -1157,7 +1227,7 @@ footer .part-2 p a {
 .videos-page .video .content .share-icon-box .share .followers p {
   margin-left: 15px;
 }
-.videos-page .video .content .share-icon-box .icon-container {
+.videos-page .video .content .icon-container {
   display: none;
 }
 .videos-page .video:nth-child(1) {
@@ -1238,9 +1308,10 @@ footer .part-2 p a {
   overflow: hidden;
   margin-bottom: 100px;
   margin-top: 30px;
+  background: #fff;
 }
 
-@media (min-width: 1650px) {
+@media (max-width: 1920px) {
   header,
 .trendy-home,
 .beauty-travel-home,
@@ -1252,18 +1323,21 @@ footer .part-2 p a {
 .travel-page,
 .sport-wear-page,
 .videos-page,
-.family-box.family-page {
-    padding-right: 254.5px;
-    padding-left: 255.5px;
+.family-box.family-page,
+.details-page {
+    padding-right: 374.5px;
+    padding-left: 375.5px;
   }
 
-  footer .part-1,
-footer .part-2 {
-    padding-right: 254.5px;
-    padding-left: 255.5px;
+  footer .part-1 {
+    padding-right: 374.5px;
+    padding-left: 375.5px;
+  }
+  footer .part-2 {
+    padding: 0px 100px;
   }
 }
-@media (min-width: 1900px) {
+@media (max-width: 1680px) {
   header,
 .trendy-home,
 .beauty-travel-home,
@@ -1275,15 +1349,1123 @@ footer .part-2 {
 .travel-page,
 .sport-wear-page,
 .videos-page,
-.family-box.family-page {
-    padding-right: 374.5px;
-    padding-left: 375.5px;
+.family-box.family-page,
+.details-page {
+    padding-right: 254.5px;
+    padding-left: 255.5px;
+  }
+
+  footer .part-1 {
+    padding-right: 254.5px;
+    padding-left: 255.5px;
+  }
+}
+@media (max-width: 1550px) {
+  header,
+.trendy-home,
+.beauty-travel-home,
+.video-home,
+.family-box,
+.bread-cumb,
+.trendy-page,
+.beauty-page,
+.travel-page,
+.sport-wear-page,
+.videos-page,
+.family-box.family-page,
+.details-page {
+    padding-right: 174px;
+    padding-left: 175px;
+  }
+
+  footer .part-1 {
+    padding-right: 174px;
+    padding-left: 175px;
+  }
+  footer .part-2 {
+    padding: 0px 50px;
+  }
+}
+@media (max-width: 1440px) {
+  header,
+.bread-cumb,
+.trendy-home,
+.beauty-travel-home,
+.video-home,
+.family-box,
+.trendy-page,
+.beauty-page,
+.travel-page,
+.sport-wear-page,
+.videos-page,
+.family-box.family-page,
+.details-page {
+    padding-right: 134.5px;
+    padding-left: 135.5px;
+  }
+
+  footer .part-1,
+footer .part2 {
+    padding-right: 134.5px;
+    padding-left: 135.5px;
+  }
+}
+@media (max-width: 1024px) {
+  header,
+.bread-cumb,
+.trendy-home,
+.beauty-travel-home,
+.video-home,
+.family-box,
+.trendy-page,
+.beauty-page,
+.travel-page,
+.sport-wear-page,
+.videos-page,
+.family-box.family-page,
+.details-page {
+    padding-right: 40px;
+    padding-left: 40px;
   }
 
   footer .part-1,
 footer .part-2 {
-    padding-right: 374.5px;
-    padding-left: 375.5px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  footer .part-1 .recent-popular-posts.recent {
+    display: none;
+  }
+  footer .part-2 {
+    justify-content: flex-end;
+  }
+  footer .part-2 ul {
+    display: none;
+  }
+  footer .part-2 p {
+    font-size: 14px;
+  }
+
+  header .search-header {
+    width: 350px;
+    height: 30px;
+  }
+  header .search-header .search-icon-header {
+    top: 4px;
+    right: 10px;
+    transform: scale(0.8);
+  }
+
+  .banner-beauty .image-box-1 {
+    padding-right: 9px;
+  }
+  .banner-beauty .image-box-1:nth-child(1) .title {
+    top: 30px;
+  }
+  .banner-beauty .image-box-1:nth-child(2) .title {
+    bottom: 30px;
+  }
+  .banner-beauty .image-box-2 .image-box-2-1 {
+    padding-bottom: 4.5px;
+  }
+  .banner-beauty .image-box-2 .image-box-2-2 {
+    padding-top: 4.5px;
+  }
+  .banner-beauty .image-box-2 .image-box-2-2 .title {
+    bottom: 30px;
+  }
+
+  .beauty-page .right-side .popular-box .popular-list .popular .content {
+    padding-left: 20px;
+  }
+  .beauty-page .right-side .popular-box .popular-list .popular .content .description {
+    text-align: left;
+  }
+
+  .details-page .right-side .related-news .news-list .new .content {
+    padding-left: 20px;
+  }
+}
+@media (max-width: 768px) {
+  header,
+.bread-cumb,
+.trendy-home,
+.beauty-travel-home,
+.video-home,
+.family-box,
+.trendy-page,
+.beauty-page,
+.travel-page,
+.sport-wear-page,
+.videos-page,
+.family-box.family-page,
+.details-page {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .button {
+    width: 150px;
+    height: 35px;
+    font-size: 12px;
+  }
+
+  .latest-find .products-list .product .image-box {
+    padding: 0px 20px;
+    width: 100%;
+  }
+  .latest-find .products-list .product .content .title {
+    line-height: 18px;
+    height: 38px;
+  }
+
+  header .logo-header {
+    width: 150px;
+    height: 70px;
+  }
+  header .logo-header img {
+    height: 100%;
+    width: 100%;
+  }
+  header .search-header {
+    width: 220px;
+    height: 25px;
+  }
+  header .search-header .search-icon-header {
+    top: 1px;
+    right: 10px;
+    transform: scale(0.6);
+  }
+
+  footer .part-1 img {
+    height: 150px;
+  }
+  footer .part-1 .input-box {
+    width: 220px;
+  }
+  footer .part-1 .input-box input,
+footer .part-1 .input-box button {
+    height: 30px;
+    margin-top: 10px;
+  }
+  footer .part-1 .recent-popular-posts {
+    height: 250px;
+  }
+  footer .part-1 .recent-popular-posts li .date {
+    margin-top: 5px;
+  }
+  footer .part-2 p {
+    font-size: 12px;
+  }
+
+  .trendy-home .trendy-box .main-trendy {
+    width: 46%;
+  }
+  .trendy-home .trendy-box .trendy-list {
+    margin-left: 0;
+    width: 52%;
+  }
+
+  .beauty-travel-home .beauty-travel-box {
+    width: 70%;
+  }
+  .beauty-travel-home .beauty-travel-box .travel-box .travel .image-box {
+    height: 250px;
+  }
+  .beauty-travel-home .right-side {
+    width: 26%;
+  }
+  .beauty-travel-home .right-side .about-me .part-1 {
+    padding: 0px 20px;
+    height: 450px;
+  }
+  .beauty-travel-home .right-side .about-me .part-1 .text-1,
+.beauty-travel-home .right-side .about-me .part-1 .text-2,
+.beauty-travel-home .right-side .about-me .part-1 .img-2 {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .beauty-travel-home .right-side .about-me .part-2 {
+    display: none;
+  }
+
+  .video-home .video-box {
+    height: 250px;
+  }
+
+  .family-box .family .image-box {
+    height: 250px;
+  }
+  .family-box .family .heart-box {
+    top: 225px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+  .family-box .family .heart-box img,
+.family-box .family .heart-box p {
+    transform: scale(0.8);
+  }
+
+  .trendy-page .trendy .image-box {
+    width: 50%;
+  }
+  .trendy-page .trendy .content {
+    width: 47%;
+  }
+  .trendy-page .trendy .content .title {
+    letter-spacing: 0.5px;
+  }
+  .trendy-page .trendy .content .icon-container li img {
+    width: 17px;
+    height: 17px;
+  }
+
+  .banner-beauty {
+    height: 450px;
+  }
+  .banner-beauty .image-box-1 {
+    width: 45%;
+  }
+  .banner-beauty .image-box-1:nth-child(1) {
+    display: none;
+  }
+  .banner-beauty .image-box-1:nth-child(2) .title {
+    bottom: 10px;
+  }
+  .banner-beauty .image-box-2 {
+    width: 55%;
+  }
+  .banner-beauty .image-box-2 .image-box-2-1 ul li {
+    margin-bottom: 7px;
+  }
+  .banner-beauty .image-box-2 .image-box-2-2 .title {
+    bottom: 10px;
+  }
+
+  .beauty-page {
+    padding-top: 50px;
+  }
+  .beauty-page .beauty-list {
+    width: 70%;
+  }
+  .beauty-page .beauty-list .beauty .content .icon-container li img {
+    width: 17px;
+    height: 17px;
+  }
+  .beauty-page .right-side {
+    width: 26%;
+  }
+  .beauty-page .right-side > .image-box {
+    height: 430px;
+  }
+  .beauty-page .right-side .popular-box {
+    margin-top: 60px;
+  }
+  .beauty-page .right-side .popular-box > .title {
+    font-size: 20px;
+  }
+  .beauty-page .right-side .popular-box .popular-list {
+    margin-top: 30px;
+  }
+  .beauty-page .right-side .popular-box .popular-list .popular .image-box {
+    width: 75px;
+    height: 75px;
+  }
+
+  .travel-page .travel-box .travel-main .image-box {
+    height: 400px;
+  }
+  .travel-page .travel-box .travel-main .content {
+    bottom: -100px;
+    height: 200px;
+    padding: 20px 30px 0px;
+  }
+  .travel-page .travel-box .left-side .travel .image-box,
+.travel-page .travel-box .right-side .travel .image-box {
+    height: 400px;
+  }
+  .travel-page .travel-box .left-side .travel .content,
+.travel-page .travel-box .right-side .travel .content {
+    width: 90%;
+    height: 200px;
+    padding-top: 15px;
+  }
+  .travel-page .travel-box .left-side .travel .content .title,
+.travel-page .travel-box .right-side .travel .content .title {
+    line-height: 25px;
+    height: 25px;
+  }
+  .travel-page .travel-box .left-side .travel .content .description,
+.travel-page .travel-box .right-side .travel .content .description {
+    margin-top: 10px;
+  }
+  .travel-page .travel-box .left-side .travel .content .icon-container li img,
+.travel-page .travel-box .right-side .travel .content .icon-container li img {
+    width: 17px;
+    height: 17px;
+  }
+  .travel-page .travel-box .left-side .travel:nth-child(2) .image-box {
+    height: 600px;
+  }
+  .travel-page .travel-box .right-side .travel:nth-child(1) .image-box {
+    height: 600px;
+  }
+  .travel-page .button {
+    margin-top: 200px;
+  }
+
+  .sport-wear-page {
+    padding-top: 50px;
+  }
+  .sport-wear-page .sport-wear .image-box {
+    height: 500px;
+  }
+  .sport-wear-page .sport-wear:nth-child(1) .image-box {
+    height: 400px;
+  }
+  .sport-wear-page .panigation {
+    margin-top: 50px;
+  }
+
+  .videos-page .video {
+    margin-bottom: 130px;
+  }
+  .videos-page .video .image-box {
+    height: 400px;
+  }
+  .videos-page .video .content {
+    position: absolute;
+    width: 90%;
+    height: 200px;
+    padding-top: 15px;
+    bottom: -100px;
+  }
+  .videos-page .video .content .title {
+    line-height: 25px;
+    height: 25px;
+  }
+  .videos-page .video .content .description {
+    margin-top: 10px;
+    height: 72px;
+  }
+  .videos-page .video .content .icon-container li img {
+    width: 17px;
+    height: 17px;
+  }
+  .videos-page .button {
+    margin-top: 50px;
+  }
+
+  .details-page .details-box {
+    width: 70%;
+  }
+  .details-page .right-side {
+    width: 26%;
+  }
+  .details-page .right-side .related-news {
+    padding: 30px 10px;
+  }
+  .details-page .right-side .related-news .news-list .new {
+    margin-top: 20px;
+  }
+  .details-page .right-side .related-news .news-list .new .image-box {
+    width: 50px;
+    height: 50px;
+  }
+  .details-page .right-side .related-news .news-list .new .image-box p {
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    font-size: 14px;
+  }
+  .details-page .right-side .related-news .news-list .new .content {
+    width: 70%;
+    padding-left: 10px;
+  }
+  .details-page .right-side .related-news .news-list .new .content .title {
+    font-size: 14px;
+  }
+}
+@media (max-width: 540px) {
+  header,
+.trendy-home,
+.beauty-travel-home,
+.video-home,
+.family-box,
+.bread-cumb,
+.trendy-page,
+.beauty-page,
+.travel-page,
+.sport-wear-page,
+.videos-page,
+.family-box.family-page,
+.details-page {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  footer .part-1,
+footer .part-2 {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .main-title.res {
+    display: block;
+    margin-top: 25px;
+  }
+
+  header {
+    height: 60px;
+  }
+  header .nav-icon,
+header .search-icon {
+    cursor: pointer;
+    display: initial;
+    transform: scale(1.1);
+  }
+  header .logo-header {
+    width: 70px;
+    height: 40px;
+  }
+  header .search-header {
+    display: none;
+  }
+  header .date-header {
+    display: none;
+  }
+
+  .close-nav {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    display: initial;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+  }
+
+  .close-nav::after,
+.close-nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #000;
+    transform: rotateZ(45deg);
+  }
+
+  .close-nav::before {
+    transform: rotateZ(-45deg);
+  }
+
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    min-height: 100vh;
+    background: #fff9f7;
+    align-items: flex-start;
+    transition: 0.5s;
+    z-index: 1;
+  }
+  .navigation ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .navigation ul li {
+    margin-top: 20px;
+  }
+  .navigation ul li a {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .navigation.active {
+    left: 0;
+  }
+
+  .icon-container li img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .banner-home {
+    height: 250px;
+  }
+
+  .trendy-home {
+    padding-top: 50px;
+  }
+  .trendy-home .trendy-box {
+    flex-direction: column;
+  }
+  .trendy-home .trendy-box .main-trendy {
+    width: 100%;
+  }
+  .trendy-home .trendy-box .main-trendy .image-box {
+    height: 420px;
+  }
+  .trendy-home .trendy-box .main-trendy .content .date {
+    font-size: 14px;
+  }
+  .trendy-home .trendy-box .main-trendy .content .title {
+    font-size: 20px;
+    line-height: 30px;
+    height: 90px;
+  }
+  .trendy-home .trendy-box .main-trendy .content .icon-container {
+    margin-top: 20px;
+  }
+  .trendy-home .trendy-box .trendy-list {
+    width: 100%;
+  }
+  .trendy-home .trendy-box .trendy-list .trendy {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  .trendy-home .trendy-box .trendy-list .trendy .image-box {
+    width: 100%;
+    height: 300px;
+  }
+  .trendy-home .trendy-box .trendy-list .trendy .content {
+    width: 100%;
+  }
+  .trendy-home .trendy-box .trendy-list .trendy .content .date {
+    margin-top: 5px;
+  }
+  .trendy-home .trendy-box .trendy-list .trendy .content .title {
+    height: 48px;
+  }
+  .trendy-home .trendy-box .trendy-list .trendy .content .description {
+    display: none;
+  }
+  .trendy-home .trendy-box .show-all {
+    text-align: left;
+  }
+
+  .banner-beauty .title {
+    display: none;
+  }
+
+  .beauty-travel-home {
+    padding-top: 100px;
+  }
+  .beauty-travel-home .beauty-travel-box {
+    width: 100%;
+  }
+  .beauty-travel-home .beauty-travel-box .beauty-box {
+    position: relative;
+  }
+  .beauty-travel-home .beauty-travel-box .beauty-box .beauty {
+    margin-top: 25px;
+  }
+  .beauty-travel-home .beauty-travel-box .beauty-box .beauty .content .date {
+    margin-top: 5px;
+  }
+  .beauty-travel-home .beauty-travel-box .beauty-box .beauty .content .title {
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .beauty-travel-home .beauty-travel-box .beauty-box .beauty .content .description {
+    display: none;
+  }
+  .beauty-travel-home .beauty-travel-box .beauty-box .show-all {
+    display: block;
+    margin-top: 30px;
+    text-align: left;
+  }
+  .beauty-travel-home .beauty-travel-box .travel-box .travel {
+    width: 100%;
+    margin-bottom: 25px;
+    border-radius: 0px;
+  }
+  .beauty-travel-home .beauty-travel-box .travel-box .travel .image-box {
+    height: 300px;
+  }
+  .beauty-travel-home .beauty-travel-box .travel-box .travel .image-box img {
+    border-radius: 0px;
+  }
+  .beauty-travel-home .beauty-travel-box .travel-box .travel .content {
+    padding: 0px 15px;
+  }
+  .beauty-travel-home .beauty-travel-box .travel-box .travel .content .title {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 25px;
+    height: 25px;
+  }
+  .beauty-travel-home .beauty-travel-box .travel-box .travel .content .description {
+    margin-top: 10px;
+  }
+  .beauty-travel-home .beauty-travel-box .travel-box .travel .content .icon-container {
+    margin-top: 15px;
+  }
+  .beauty-travel-home .beauty-travel-box .travel-box .button {
+    margin-top: 50px;
+  }
+  .beauty-travel-home .right-side {
+    display: none;
+  }
+
+  .video-home {
+    flex-direction: column-reverse;
+    padding-top: 12.5px;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    height: 390px;
+  }
+  .video-home .content {
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+  }
+  .video-home .content .title {
+    margin-top: 20px;
+    height: 56px;
+    font-size: 18px;
+    line-height: 28px;
+    text-transform: uppercase;
+  }
+  .video-home .content > p {
+    margin-top: 15px;
+  }
+  .video-home .content .followers {
+    margin-top: 15px;
+  }
+  .video-home .video-box {
+    width: 100%;
+    height: 185px;
+  }
+  .video-home .video-box .icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .family-box {
+    padding-bottom: 50px;
+  }
+  .family-box .family {
+    width: 100%;
+  }
+  .family-box .family .image-box {
+    height: 300px;
+  }
+  .family-box .family .content {
+    padding: 20px;
+  }
+  .family-box .family .content .title {
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+  .family-box .family .heart-box {
+    width: 60px;
+    height: 60px;
+    top: 270px;
+  }
+
+  footer {
+    height: 430px;
+  }
+  footer .part-1 {
+    flex-direction: column;
+    padding-top: 30px;
+    justify-content: flex-start;
+    align-items: center;
+    height: 350px;
+  }
+  footer .part-1 img {
+    width: 50px;
+    height: 61px;
+  }
+  footer .part-1 ul {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+  }
+  footer .part-1 ul li {
+    list-style: none;
+  }
+  footer .part-1 ul li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+  }
+  footer .part-1 .input-box {
+    display: none;
+  }
+  footer .part-1 .recent-popular-posts {
+    display: none;
+  }
+  footer .part-2 p {
+    text-align: center;
+  }
+
+  .banner-trendy {
+    display: none;
+  }
+
+  .trendy-page {
+    padding-top: 25px;
+  }
+  .trendy-page .trendy {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+  }
+  .trendy-page .trendy:nth-child(1) .image-box {
+    height: 420px;
+  }
+  .trendy-page .trendy .image-box {
+    width: 100%;
+    height: 182px;
+  }
+  .trendy-page .trendy .content {
+    width: 100%;
+  }
+  .trendy-page .trendy .content .date-res {
+    margin-top: 20px;
+  }
+  .trendy-page .trendy .content .title {
+    margin-top: 3px;
+    height: 75px;
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .trendy-page .trendy .content .description {
+    height: 88px;
+    margin-top: 7px;
+  }
+  .trendy-page .trendy .content .icon-container {
+    margin-top: 28px;
+    left: 100%;
+    transform: translateX(-100%);
+  }
+  .trendy-page .trendy:nth-child(even) {
+    flex-direction: column;
+  }
+  .trendy-page .panigation {
+    margin: 50px 0px;
+  }
+
+  .banner-beauty {
+    margin-top: 25px;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  .banner-beauty .image-box-1 {
+    width: 50%;
+  }
+  .banner-beauty .image-box-1:nth-child(1) {
+    display: block;
+    padding-right: 3.5px;
+  }
+  .banner-beauty .image-box-1:nth-child(2) {
+    padding-left: 3.5px;
+    padding-right: 0px;
+  }
+  .banner-beauty .image-box-2 {
+    width: 100%;
+  }
+  .banner-beauty .image-box-2 .image-box-2-1 {
+    padding-top: 7px;
+    height: 160px;
+  }
+  .banner-beauty .image-box-2 .image-box-2-2 {
+    display: none;
+  }
+
+  .beauty-page {
+    padding-top: 30px;
+  }
+  .beauty-page .beauty-list {
+    width: 100%;
+  }
+  .beauty-page .beauty-list .beauty {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .beauty-page .beauty-list .beauty .content {
+    margin-top: 15px;
+  }
+  .beauty-page .beauty-list .beauty .content .description {
+    margin-top: 12px;
+  }
+  .beauty-page .beauty-list .panigation {
+    margin: 20px 0px 50px;
+  }
+  .beauty-page .right-side {
+    display: none;
+  }
+
+  .travel-page {
+    padding: 25px 0px 50px;
+  }
+  .travel-page .travel-box .travel-main .image-box {
+    height: 250px;
+  }
+  .travel-page .travel-box .travel-main .image-box img {
+    border-radius: 0px;
+  }
+  .travel-page .travel-box .travel-main .content {
+    position: inherit;
+    top: 0;
+    width: 100%;
+    border-radius: 0px;
+    height: 210px;
+  }
+  .travel-page .travel-box .travel-main .content .title {
+    font-size: 16px;
+    height: 50px;
+    line-height: 25px;
+  }
+  .travel-page .travel-box .travel-main .content .description {
+    margin-top: 10px;
+    height: 72px;
+  }
+  .travel-page .travel-box .travel-main .content .icon-container {
+    width: 131px;
+    margin-top: 20px;
+  }
+  .travel-page .travel-box .left-side,
+.travel-page .travel-box .right-side {
+    width: 100%;
+  }
+  .travel-page .travel-box .left-side .travel,
+.travel-page .travel-box .right-side .travel {
+    margin-top: 30px;
+  }
+  .travel-page .travel-box .left-side .travel .image-box,
+.travel-page .travel-box .right-side .travel .image-box {
+    height: 330px;
+  }
+  .travel-page .travel-box .left-side .travel .image-box img,
+.travel-page .travel-box .right-side .travel .image-box img {
+    border-radius: 0px;
+  }
+  .travel-page .travel-box .left-side .travel .content,
+.travel-page .travel-box .right-side .travel .content {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .travel-page .travel-box .left-side .travel .content .title,
+.travel-page .travel-box .right-side .travel .content .title {
+    font-size: 16px;
+    line-height: 25px;
+    height: 50px;
+  }
+  .travel-page .travel-box .left-side .travel .content .icon-container,
+.travel-page .travel-box .right-side .travel .content .icon-container {
+    width: 131px;
+    margin-top: 20px;
+  }
+  .travel-page .travel-box .left-side .travel:nth-child(2) .image-box {
+    height: 450px;
+  }
+  .travel-page .travel-box .right-side .travel:nth-child(1) .image-box {
+    height: 450px;
+  }
+  .travel-page .button {
+    margin: 50px 0px;
+  }
+
+  .sport-wear-page {
+    padding: 25px 0px 0px;
+  }
+  .sport-wear-page .sport-wear {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .sport-wear-page .sport-wear:nth-child(1) .image-box {
+    height: 200px;
+  }
+  .sport-wear-page .sport-wear:nth-child(1) .content {
+    margin-top: 20px;
+  }
+  .sport-wear-page .sport-wear:nth-child(1) .content .title {
+    height: 50px;
+  }
+  .sport-wear-page .sport-wear .image-box {
+    height: 400px;
+  }
+  .sport-wear-page .sport-wear .content {
+    padding: 13px;
+  }
+  .sport-wear-page .sport-wear .content .date {
+    text-align: center;
+  }
+  .sport-wear-page .sport-wear .content .title {
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 25px;
+    height: 50px;
+  }
+  .sport-wear-page .sport-wear .content .description {
+    display: none;
+  }
+  .sport-wear-page .sport-wear .content .icon-container {
+    display: flex;
+    width: 131px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+  }
+  .sport-wear-page .panigation {
+    margin: 20px 0px 50px;
+  }
+
+  .videos-page {
+    padding: 0;
+  }
+  .videos-page .video {
+    width: 100%;
+    margin-top: 0px;
+  }
+  .videos-page .video .image-box {
+    height: 330px;
+  }
+  .videos-page .video .image-box img:nth-child(1) {
+    border-radius: 0px;
+  }
+  .videos-page .video .image-box img:nth-child(2) {
+    width: 85px;
+    height: 85px;
+  }
+  .videos-page .video .content {
+    padding: inherit;
+    border-radius: 0px;
+    width: 100%;
+  }
+  .videos-page .video .content .title {
+    font-size: 16px;
+    line-height: 25px;
+    height: 50px;
+  }
+  .videos-page .video .content .share-icon-box {
+    display: none;
+  }
+  .videos-page .video .content .icon-container {
+    width: 131px;
+    display: flex;
+    margin-top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .videos-page .video:nth-child(1) {
+    margin-top: 25px;
+  }
+  .videos-page .button {
+    margin: 30px 0px 50px;
+  }
+
+  .family-box.family-page {
+    padding-top: 25px;
+  }
+
+  .family-box.family-page.res {
+    display: none;
+  }
+
+  .details-page {
+    padding: 25px 0px 50px;
+  }
+  .details-page .details-box {
+    width: 100%;
+    background: #000;
+  }
+  .details-page .right-side {
+    display: none;
+  }
+}
+@media (max-width: 375px) {
+  header,
+.trendy-home,
+.beauty-travel-home,
+.video-home,
+.family-box,
+.bread-cumb,
+.trendy-page,
+.beauty-page,
+.travel-page,
+.sport-wear-page,
+.videos-page,
+.family-box.family-page,
+.details-page {
+    padding-right: 12.5px;
+    padding-left: 12.5px;
+  }
+
+  footer .part-1,
+footer .part-2 {
+    padding-right: 12.5px;
+    padding-left: 12.5px;
+  }
+
+  .icon-container {
+    width: 105px;
+  }
+
+  .show-all {
+    font-size: 14px;
+  }
+
+  .banner-home {
+    height: 180px;
+  }
+
+  .trendy-home .trendy-box .trendy-list .trendy .image-box {
+    height: 300px;
+  }
+  .trendy-home .trendy-box .trendy-list .trendy .content .date {
+    margin-top: 5px;
+  }
+  .trendy-home .trendy-box .trendy-list .trendy .content .title {
+    height: 48px;
+  }
+  .trendy-home .trendy-box .trendy-list .trendy .content .description {
+    display: none;
+  }
+
+  .beauty-travel-home {
+    padding-top: 30px;
+  }
+  .beauty-travel-home .beauty-travel-box .beauty-box .beauty .image-box {
+    height: 227px;
+  }
+  .beauty-travel-home .beauty-travel-box .beauty-box .show-all {
+    margin-top: 10px;
+  }
+  .beauty-travel-home .beauty-travel-box .travel-box {
+    margin-top: 25px;
+  }
+  .beauty-travel-home .beauty-travel-box .travel-box .content .description {
+    text-align: center;
+  }
+
+  .sport-wear-page,
+.travel-page {
+    padding: 25px 0px 0px;
+  }
+
+  .videos-page {
+    padding: 0;
+  }
+
+  .details-page {
+    padding: 25px 0px 50px;
   }
 }
 
